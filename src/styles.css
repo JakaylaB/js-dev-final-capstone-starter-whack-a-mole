@@ -1,43 +1,50 @@
 html {
-  /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/background.png?raw=true') no-repeat center center fixed;
+  /*background: url('assets/spider_web.png')  no-repeat center center fixed;*/
+  background-color: orange;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:0;
+  z-index: 0;
   overflow: hidden;
 }
 
 h1 {
   text-align: center;
-  font-size: 90px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  color: white;
-  -webkit-text-stroke: 2px black;
+  font-size: 100px;
+  font-family: 'Spooky Pixels', sans-serif;
+  color: rgb(105, 88, 12);
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
 }
 
+                
 h2 {
   text-align: center;
-  font-size: 40px;
-  color: white;
-  -webkit-text-stroke: 1px black;
+  font-size: 30px;
+  font-family: 'Spooky Pixels', sans-serif; 
+  color: rgba(86, 241, 8, 0.925);
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
+
 
 #start {
     text-align: center;
     font-size: 30px;
+    font-family: cursive;
+    color: rgb(251, 255, 0);
 }
 
 #timer{
-    color: white;
+    color: rgb(252, 255, 46);
+    font-size: 30px;
 }
 
 .grid {
-  width: 600px;
-  height: 400px;
+  width: 200px;
+  height: 99px;
   display: flex;
+  align-content: normal;
   flex-wrap: wrap;
   margin: 0 auto;
   /*cursor: url('./assets/mallet.png'), pointer;*/
@@ -45,8 +52,13 @@ h2 {
 
 .hole {
   flex: 1 0 33.33%;
-  overflow: hidden;
-  position: relative;
+  overflow:hidden;
+  position:relative;
+  height: 50%;
+  width: 60%;
+  
+  
+  
 }
 
 .hole:after {
@@ -56,27 +68,31 @@ h2 {
   background-size:contain;
   content:'';
   width: 100%;
-  height: 100%;
+  height: 450%;
   position: absolute;
-  bottom: -40%;
+  bottom: -20%;
   z-index: 2;
   pointer-events:none;
 }
 
+
 .mole {
-  /*background:url('./assets/mole.png') bottom center no-repeat;*/
-  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  background: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
-  top: 100%;
+  top: 100%; 
   width: 100%;
-  height: 100%;
-  /*transition: transform 0.5s;*/
-  transition: all 1s;
-  pointer-events:auto;
+  height: 450%;
+  transition: all 1s; 
+  pointer-events: auto;
+  display: none; /* Initially hidden */
+}
+
+.mole.show {
+  display: block;
 }
 
 .hole.show .mole {
-  top: 0;
+  top: 5px;
   /*transform: scale(1.1);*/
 }
